@@ -1,0 +1,34 @@
+.item-todo{
+    color:rgb(205, 170, 216); 
+    display: flex; 
+    justify-content: space-between;
+    padding-bottom: 1rem;
+    list-style: none;   
+    font-size: 1.2rem; 
+}
+.item-todo:not(:last-child) {
+    margin-bottom: 1rem;
+  }
+
+
+.input-todo{
+    margin-top: 2rem;
+    margin-bottom: 2.5rem;
+    font-size: 1.3rem;
+    text-align: center;
+    background-color: rgb(205, 170, 216);
+    color:white;
+}
+
+.delete-task-button{
+    background-color: rgb(205, 170, 216);
+    color:white;
+    border-radius: 8px;
+}
+
+
+
+
+
+
+

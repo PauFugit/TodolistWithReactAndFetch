@@ -1,50 +1,45 @@
 import React from "react";
+import "./List.css";
+import { HiOutlineTrash} from 'react-icons/hi';
+
+HiOutlineTrash
+
+const List = ({ task, deleteTasks, handleSubmit, todoList, setTodoList }) => {
 
 
-
-const List = ({task, setTask, deleteTasks, handleSubmit, todoList, setTodoList}) => {
-
-
-    return(
+    return (
         <>
-        <div className="container">
             <div className="row">
-                <div className="col-sm-12">
+                <div className="todolist-body">
                     <input
-                    type= "text"
-                    name="todo-list"
-                    id="todo-list"
-                    value={todoList}
-                    className="input-todo"
-                    placeholder="add a task"
-                    onChange={(e) => setTodoList(e.target.value)}
-                    onKeyDown={(e) => handleSubmit(e)}
+                        type="text"
+                        name="todo-list"
+                        id="todo-list"
+                        placeholder="Add a task"
+                        value={todoList}
+                        className="input-todo col-md-12"
+                        onChange={(e) => setTodoList(e.target.value)}
+                        onKeyDown={handleSubmit}
                     />
-
-                </div>
-            </div>
-
-            <div className="row">
-                <div className="col-sm-12">
-                    <ul className="tasks">
+                    <div className="container">
                         {task.length > 0 &&
-                        task.map((todoList, index) => (
-                            <div className="item-todo"
-                                key={index}
-                            >
-                                <li id={index}>
-                                    {todoList.label}
-                                </li>
-                                <div className="trash" index={index}>
-                                    <button className="delete"
-                                    onClick={() => deleteTasks(index)}/>
+                            task.map((todoList, index) => (
+
+                                <div className="item-todo"
+                                    key={index}>
+                                    <li id={index}>
+                                        {todoList.label}
+                                    </li>
+                                    <button
+                                    className="delete-task-button"
+                                        onClick={() => deleteTasks(index)}>
+                                            <HiOutlineTrash/>
+                                        </button>
                                 </div>
-                                </div>
-                        ))}
-                    </ul>
+                            ))}
+                    </div>
                 </div>
             </div>
-        </div>
         </>
     );
 };
